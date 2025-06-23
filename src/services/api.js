@@ -1,4 +1,4 @@
-const URL = 'https://electrocrud-api.onrender.com';
+const URL = 'https://electrocrud-api.onrender.com/productos';
 
 /**
  * Obtiene la lista de todos los productos.
@@ -39,7 +39,7 @@ export async function eliminarProducto(id) {
  * @returns {Promise<Object>} Producto encontrado
  */
 export const obtenerProductoPorId = async (id) => {
-  const res = await fetch(`http://localhost:3001/productos/${id}`);
+  const res = await fetch(`${URL}/${id}`);
   return await res.json();
 };
 
@@ -50,7 +50,7 @@ export const obtenerProductoPorId = async (id) => {
  * @returns {Promise<Response>} Respuesta de la API
  */
 export const actualizarProducto = async (id, producto) => {
-  return await fetch(`http://localhost:3001/productos/${id}`, {
+  return await fetch(`${URL}/${id}`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(producto),
