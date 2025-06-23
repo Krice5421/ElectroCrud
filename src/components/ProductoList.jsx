@@ -120,6 +120,9 @@ function ProductoList() {
             </select>
           </div>
           <div className="col-md-3">
+            <label className="form-label d-block d-md-none mb-1" style={{ fontSize: '0.95rem' }}>
+              Filtro: Fecha de adquisición
+            </label>
             <input
               type="date"
               className="form-control"

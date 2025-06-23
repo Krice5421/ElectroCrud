@@ -69,7 +69,7 @@ function ProductoForm() {
 
       const captchaResp = await Swal.fire({
         title: 'Verificación',
-        text: `¿Cuánto es ${a} + ${b}? (Captcha para actualizar)`,
+        text: `¿Cuánto es ${a} + ${b}?`,
         input: 'text',
         inputPlaceholder: 'Respuesta',
         showCancelButton: true,
