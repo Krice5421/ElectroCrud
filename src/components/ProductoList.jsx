@@ -20,11 +20,6 @@ function ProductoList() {
   const [filtroHasta, setFiltroHasta] = useState('');
   const navigate = useNavigate();
 
-  // Carga los productos al montar el componente
-  useEffect(() => {
-    cargarProductos();
-  }, []);
-
   /**
    * Obtiene la lista de productos desde la API y la guarda en el estado.
    */
@@ -32,6 +27,10 @@ function ProductoList() {
     const data = await obtenerProductos();
     setProductos(data);
   };
+
+  useEffect(() => {
+    cargarProductos();
+  }, []);
 
   /**
    * Elimina un producto tras validar un captcha simple y confirmar la acción.
