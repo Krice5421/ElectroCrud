@@ -50,7 +50,7 @@ export async function obtenerProductoPorId(id) {
  * @returns {Promise<Response>} Respuesta de la API
  */
 export const actualizarProducto = async (id, producto) => {
-  return await fetch(`${URL}/${id}`, {
+  return await fetch(`https://electrocrud-api.onrender.com/productos/${id}`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(producto),

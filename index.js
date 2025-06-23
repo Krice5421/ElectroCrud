@@ -46,6 +46,17 @@ app.get('/productos/:id', (req, res) => {
   }
 });
 
+app.put('/productos/:id', (req, res) => {
+  const id = Number(req.params.id);
+  const index = db.productos.findIndex(p => p.id === id);
+  if (index !== -1) {
+    db.productos[index] = { ...db.productos[index], ...req.body, id };
+    res.json(db.productos[index]);
+  } else {
+    res.status(404).json({ error: 'Producto no encontrado' });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`API escuchando en puerto ${PORT}`);
 });
