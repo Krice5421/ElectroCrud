@@ -1,0 +1,31 @@
+/*
+  Estilos para la página de inicio.
+
+  .inicio-bg    : Fondo con gradiente y padding.
+  .inicio-card  : Tarjeta principal, fondo claro y bordes redondeados.
+  .inicio-title : Título destacado.
+  .inicio-desc  : Descripción secundaria.
+*/
+.inicio-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #7286D3, #8EA7E9);
+  padding: 2rem;
+}
+
+.inicio-card {
+  background-color: #FFF2F2;
+  max-width: 500px;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.inicio-title {
+  font-size: 2.2rem;
+  color: #7286D3;
+  font-weight: 700;
+}
+
+.inicio-desc {
+  font-size: 1rem;
+  color: #555;
+}

@@ -1,0 +1,169 @@
+/* 
+  Estilos globales para la aplicación ElectroCRUD.
+  Define variables de color, tipografía, botones, tarjetas, tablas, formularios y responsividad.
+*/
+
+/* Importa la fuente principal */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* Variables de color para toda la app */
+:root {
+  --color-primario: #7286D3;
+  --color-secundario: #8EA7E9;
+  --color-fondo-claro: #E5E0FF;
+  --color-fondo-suave: #ffffff;
+}
+
+/* Reset básico y box-sizing */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos generales del body */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-fondo-claro);
+  color: #333;
+  padding-top: auto;
+}
+
+/* Botones primarios reutilizables */
+.btn-primary {
+  background-color: var(--color-primario);
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 1rem;
+  padding: 0.5rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #5a6cc3;
+  transform: scale(1.02);
+}
+
+/* Títulos principales y secundarios */
+h1, h2, h3, h4, h5 {
+  color: var(--color-primario);
+  font-weight: 700;
+}
+
+/* Tarjetas generales */
+.card {
+  background-color: var(--color-fondo-suave);
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+}
+
+/* Encabezados de tablas */
+.table th {
+  background-color: var(--color-secundario);
+  color: white;
+}
+
+/* Celdas de tablas */
+.table td, .table th {
+  vertical-align: middle;
+}
+
+/* Contenedor de formularios */
+.form-container {
+  min-height: 100vh;
+  background-color: #E5E0FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Tarjeta de formulario */
+.form-card {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Etiquetas de los formularios */
+.form-card label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+  color: #333;
+}
+
+/* Inputs, selects y textareas en formularios */
+.form-card input,
+.form-card textarea,
+.form-card select {
+  border-radius: 12px;
+  padding: 0.75rem;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+  width: 100%;
+  margin-bottom: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Efecto focus en campos de formulario */
+.form-card input:focus,
+.form-card textarea:focus,
+.form-card select:focus {
+  border-color: #7286D3;
+  box-shadow: 0 0 0 3px rgba(114, 134, 211, 0.2);
+  outline: none;
+}
+
+/* Botón del formulario */
+.form-card button {
+  background-color: #7286D3;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  width: 100%;
+  transition: background 0.3s;
+}
+
+.form-card button:hover {
+  background-color: #5a6cc3;
+}
+
+/* Animación de entrada para formularios */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 576px) {
+  .form-card {
+    padding: 1.5rem;
+  }
+
+  .form-title {
+    font-size: 1.3rem;
+  }
+
+  .form-card input,
+  .form-card select,
+  .form-card textarea {
+    font-size: 0.9rem;
+  }
+}
+
