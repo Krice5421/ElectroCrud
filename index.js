@@ -35,6 +35,16 @@ app.delete('/productos/:id', (req, res) => {
   }
 });
 
+// Obtener un producto por ID
+app.get('/productos/:id', (req, res) => {
+  const id = Number(req.params.id);
+  const producto = db.productos.find(p => p.id === id);
+  if (producto) {
+    res.json(producto);
+  } else {
+    res.status(404).json({ error: 'Producto no encontrado' });
+  }
+});
 
 app.listen(PORT, () => {
   console.log(`API escuchando en puerto ${PORT}`);
