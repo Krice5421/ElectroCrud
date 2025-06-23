@@ -1,4 +1,4 @@
-const URL = 'https://tu-api-render.onrender.com/productos';
+const URL = 'https://electrocrud-api.onrender.com';
 
 /**
  * Obtiene la lista de todos los productos.
