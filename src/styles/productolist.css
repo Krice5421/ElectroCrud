@@ -170,3 +170,15 @@ select {
     padding: 0.5rem 0.3rem;
   }
 }
+
+/* Estilos adicionales para pantallas pequeñas */
+@media (max-width: 576px) {
+  .filter-bar .form-control,
+  .filter-bar .form-select {
+    font-size: 0.95rem;
+    padding: 0.4rem 0.6rem;
+  }
+  .table-responsive {
+    font-size: 0.95rem;
+  }
+}

@@ -125,6 +125,7 @@ function ProductoList() {
               className="form-control"
               value={filtroDesde}
               onChange={(e) => setFiltroDesde(e.target.value)}
+              placeholder="Desde"
             />
           </div>
           <div className="col-md-3 d-flex align-items-center">
@@ -133,6 +134,7 @@ function ProductoList() {
               className="form-control me-2"
               value={filtroHasta}
               onChange={(e) => setFiltroHasta(e.target.value)}
+              placeholder="Hasta"
             />
             <button
               className="btn btn-danger btn-sm d-flex align-items-center"
@@ -155,14 +157,14 @@ function ProductoList() {
 
         {/* Tabla */}
         <div className="table-responsive">
-          <table className="table table-bordered table-striped align-middle text-center">
+          <table className="table table-bordered table-striped table-sm align-middle text-center">
             <thead className="table-primary">
               <tr>
                 <th>ID</th>
                 <th>Nombre</th>
-                <th>Descripción</th> {/* Nueva columna */}
+                <th className="d-none d-sm-table-cell">Descripción</th>
                 <th>Usuario</th>
-                <th>Fecha</th>
+                <th className="d-none d-md-table-cell">Fecha</th>
                 <th>Estado</th>
                 <th>Acciones</th>
               </tr>
@@ -179,14 +181,11 @@ function ProductoList() {
                   <tr key={p.id} className="fade-in-row">
                     <td>{p.id}</td>
                     <td>{p.nombre}</td>
-                    <td
-                      className="descripcion-col"
-                      title={p.descripcion}
-                    >
+                    <td className="d-none d-sm-table-cell descripcion-col" title={p.descripcion}>
                       {p.descripcion}
                     </td>
                     <td>{p.usuario}</td>
-                    <td>{p.fecha}</td>
+                    <td className="d-none d-md-table-cell">{p.fecha}</td>
                     <td>{p.estado}</td>
                     <td>
                       <button
