@@ -38,10 +38,10 @@ export async function eliminarProducto(id) {
  * @param {string} id - ID del producto
  * @returns {Promise<Object>} Producto encontrado
  */
-export const obtenerProductoPorId = async (id) => {
-  const res = await fetch(`${URL}/${id}`);
-  return await res.json();
-};
+export async function obtenerProductoPorId(id) {
+  const res = await fetch(`https://electrocrud-api.onrender.com/productos/${id}`);
+  return res.json();
+}
 
 /**
  * Actualiza un producto existente.

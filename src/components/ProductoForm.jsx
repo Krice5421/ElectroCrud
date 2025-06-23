@@ -26,23 +26,16 @@ function ProductoForm() {
   // Carga los datos del producto si hay id (modo edición)
   useEffect(() => {
     if (id) {
-      cargarProducto(id);
+      obtenerProductoPorId(id).then((data) => {
+        if (data && data.id) {
+          setProducto(data);
+        } else {
+          Swal.fire('Error', 'Producto no encontrado', 'error');
+          navigate('/crud/consultar');
+        }
+      });
     }
-  }, [id]);
-
-  /**
-   * Obtiene los datos de un producto por su id y los carga en el estado.
-   * @param {string} id - ID del producto a cargar
-   */
-  const cargarProducto = async (id) => {
-    const data = await obtenerProductoPorId(id);
-    if (data) {
-      setProducto(data);
-    } else {
-      Swal.fire('Error', 'Producto no encontrado', 'error');
-      navigate('/crud/consultar');
-    }
-  };
+  }, [id, navigate]);
 
   /**
    * Maneja los cambios en los campos del formulario.
