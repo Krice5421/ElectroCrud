@@ -11,7 +11,7 @@ import './styles/global.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/ElectroCrud">
       <Navbar />
       <Routes>
         <Route path="/" element={<Inicio />} />

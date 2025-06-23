@@ -15,7 +15,26 @@ app.get('/productos', (req, res) => {
   res.json(db.productos);
 });
 
-// Aquí puedes agregar POST, PUT, DELETE si lo necesitas
+app.post('/productos', (req, res) => {
+  const nuevoProducto = req.body;
+  // Asigna un ID numérico único (por ejemplo, usando Date.now())
+  nuevoProducto.id = Date.now();
+  db.productos.push(nuevoProducto);
+  res.status(201).json(nuevoProducto);
+});
+
+// Eliminar un producto por ID
+app.delete('/productos/:id', (req, res) => {
+  const id = Number(req.params.id);
+  const index = db.productos.findIndex(p => p.id === id);
+  if (index !== -1) {
+    db.productos.splice(index, 1);
+    res.status(204).end();
+  } else {
+    res.status(404).json({ error: 'Producto no encontrado' });
+  }
+});
+
 
 app.listen(PORT, () => {
   console.log(`API escuchando en puerto ${PORT}`);
